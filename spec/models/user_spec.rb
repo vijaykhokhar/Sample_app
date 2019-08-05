@@ -1,5 +1,5 @@
 require "rails_helper"
-require "./app/models/user.rb"
+
 describe User do
   before(:each) do
     @user = User.new(name: "user", email: "vijay@railstutorial.org", password: "123456", password_confirmation: "123456")
@@ -79,4 +79,10 @@ describe User do
     ur = User.find_by(email: @user.email)
     expect(ur.authenticate(@user.password)).to eq(@user.authenticate(@user.password))
   end
+
+  describe "remember token" do
+    before { @user.save }
+    it(:remember_token) { should_not be_blank}
+  end
+
 end  
