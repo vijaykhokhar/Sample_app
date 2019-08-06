@@ -1,2 +1,2 @@
       invoke  active_record
-      remove    db/migrate/20190806120330_add_reset_to_users.rb
+   identical    db/migrate/20190806123034_add_reset_to_users.rb
