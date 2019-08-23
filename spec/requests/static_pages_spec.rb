@@ -4,7 +4,7 @@ describe StaticPagesController do
   subject { page }
   it "should get home page" do
     get '/'
-    expect(response.status).to eql 200  
+    expect(response.status).to eql 200
   end
 
   it "should get help page" do

@@ -33,7 +33,7 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
-   def authenticated?(attribute, token)
+  def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
@@ -74,7 +74,7 @@ class User < ApplicationRecord
   def follow(other_user)
     following << other_user
   end
-
+ 
   def following?(other_user)
     following.include?(other_user)
   end
